@@ -151,7 +151,7 @@ python main.py --filepath "resumes/sample.pdf"
 ### Disease Prediction
 ```bash
 cd disease-prediction
-python predict.py --symptoms "fever, cough, fatigue"
+python desease_predict.py --symptoms "fever, cough, fatigue"
 ```
 
 ### Sentiment Analysis
