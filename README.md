@@ -53,7 +53,7 @@ y = data["disease"]
 model = RandomForestClassifier()
 model.fit(X, y)
 
-# Predict disease for new symptoms
+# Disease for new symptoms
 new_symptoms = [[1, 0, 1, 0]]  # Example: [fever, cough, headache, fatigue]
 prediction = model.predict(new_symptoms)
 print("Predicted Disease:", prediction[0])
@@ -151,7 +151,7 @@ python main.py --filepath "resumes/sample.pdf"
 ### Disease Prediction
 ```bash
 cd disease-prediction
-python desease_predict.py --symptoms "fever, cough, fatigue"
+python disease_predict.py --symptoms "fever, cough, fatigue"
 ```
 
 ### Sentiment Analysis
