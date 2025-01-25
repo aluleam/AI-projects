@@ -1,4 +1,4 @@
-# AI Projects Repository
+# AI Projects
 
 This repository contains a collection of AI projects built to solve real-world problems. Below is a detailed overview of each project, setup instructions, and tools used.
 
