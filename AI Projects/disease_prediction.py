@@ -9,12 +9,12 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 from sklearn.utils.class_weight import compute_class_weight
 from xgboost import XGBClassifier
 from imblearn.over_sampling import SMOTE
-import tensorflow as tf
 from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.layers import Dense, Dropout, BatchNormalization
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.regularizers import l2
+import tensorflow as tf
 import logging
 import joblib
 import os
@@ -31,7 +31,6 @@ def load_and_explore_data(filepath: str, verbose: bool = True) -> pd.DataFrame:
         
         patient_data = pd.read_csv(filepath)
         
-        # Fill missing values for numeric columns only
         numeric_columns = patient_data.select_dtypes(include=['number']).columns
         patient_data[numeric_columns] = patient_data[numeric_columns].fillna(patient_data[numeric_columns].median())
         
@@ -73,7 +72,7 @@ def validate_data(patient_data):
     return patient_data
 
 def preprocess_data(patient_data):
-    """Preprocess the data by splitting features and target, scaling features, and computing class weights."""
+    """Preprocess the data"""
     
     # Ensure that all feature columns are numeric
     features = patient_data.drop("Outcome", axis=1)
@@ -412,3 +411,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
